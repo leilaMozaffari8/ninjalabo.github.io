@@ -1,0 +1,1662 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.5.57">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Blog – NinjaLABO</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./performance.html" rel="next">
+<link href="./docs/tinymlaas/Use_cases.html" rel="prev">
+<link href="./images/favicon.png" rel="icon" type="image/png">
+<script src="site_libs/quarto-listing/list.min.js"></script>
+<script src="site_libs/quarto-listing/quarto-listing.js"></script>
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script>
+
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-listing .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
+
+    const options = {
+      valueNames: ['listing-date','listing-title','listing-author','listing-subtitle','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      
+      searchColumns: ["listing-date","listing-title","listing-author","listing-subtitle","listing-image","listing-description","listing-categories"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  </script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-1KVB48YND6"></script>
+
+<script type="text/javascript">
+
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-1KVB48YND6', { 'anonymize_ip': true});
+</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="styles.css">
+<meta name="twitter:title" content="Blog – NinjaLABO">
+<meta name="twitter:image" content="https://ninjalabo.github.io/images/logo.jpg">
+<meta name="twitter:card" content="summary_large_image">
+</head>
+
+<body class="nav-sidebar docked nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="./index.html" class="navbar-brand navbar-brand-logo">
+    <img src="./images/logo.jpg" alt="NinjaLABO log." class="navbar-logo">
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link active" href="./getstarted.html" aria-current="page"> 
+<span class="menu-text">Get Started</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-resources" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Resources</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-resources">    
+        <li>
+    <a class="dropdown-item" href="./performance.html">
+ <span class="dropdown-text">Performance 🚀</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./tutorials/runwalkthrough.html">
+ <span class="dropdown-text">Tutorials</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./getstarted.html">
+ <span class="dropdown-text">Documentations</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-company" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Company</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-company">    
+        <li>
+    <a class="dropdown-item" href="./blogs/about.html">
+ <span class="dropdown-text">About</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./blog.html#category=News">
+ <span class="dropdown-text">News 🌟</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./blog.html">
+ <span class="dropdown-text">Blogs</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="./pricing.html"> 
+<span class="menu-text">Pricing</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./getstarted.html"> 
+<span class="menu-text"><a href="https://studio.ninjalabo.ai/" style="background-color: rgb(185, 185, 1); padding: 10px 20px; color: white; border: none; border-radius: 0.5rem; text-decoration: None; margin-right: 10px;">Try Free</a></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools tools-wide">
+    <a href="https://twitter.com/ninjalabo" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-twitter"></i></a>
+    <a href="https://www.linkedin.com/company/ninjalabo/" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-linkedin"></i></a>
+    <div class="dropdown">
+      <a href="" title="" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" role="link" aria-label=""><i class="bi bi-github"></i></a>
+      <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-0">
+          <li>
+            <a class="dropdown-item quarto-navbar-tools-item" href="https://github.com/ninjalabo/ninjalabo.github.io">
+            Source Code
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item quarto-navbar-tools-item" href="https://github.com/ninjalabo/ninjalabo.github.io/issues">
+            Report a Bug
+            </a>
+          </li>
+      </ul>
+    </div>
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./blog.html">Blog</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./blogs/about.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">About</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./getstarted.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Get Started</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false">
+ <span class="menu-text">Tutorials</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./tutorials/runwalkthrough.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Run Walkthrough</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
+ <span class="menu-text">Documentation</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false">
+ <span class="menu-text">TinyMLaaS - summer 2023</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./docs/tinymlaas/Architecture.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Architecture</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./docs/tinymlaas/Background.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Background information and some literature sources</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./docs/tinymlaas/Demonstration.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Demonstratation of TinyMLaaS WebApp</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./docs/tinymlaas/Next_steps.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Suggestions for further development</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./docs/tinymlaas/Software-Project-Summer-Kick-off.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Project starting point</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./docs/tinymlaas/Technologies.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Technological choices</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./docs/tinymlaas/TinyML-backend_README.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">TinyML-backend</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./docs/tinymlaas/TinyML-frontend_README.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">TinyML-frontend</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./docs/tinymlaas/TinyML-MCU_arduino_README.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Arduino sketch</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./docs/tinymlaas/TinyML-MCU_README.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">TinyML-MCU</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./docs/tinymlaas/TinyMLaaS_README.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">TinyMLaaS-main</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./docs/tinymlaas/Use_cases.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Use case scenarios</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./blog.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Blog</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./performance.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Performance</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        
+    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(21)</span></div><div class="category" data-category="About">About <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Competitor">Competitor <span class="quarto-category-count">(2)</span></div><div class="category" data-category="Compiler">Compiler <span class="quarto-category-count">(1)</span></div><div class="category" data-category="DNN">DNN <span class="quarto-category-count">(3)</span></div><div class="category" data-category="Ericsson">Ericsson <span class="quarto-category-count">(2)</span></div><div class="category" data-category="HU">HU <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Hiring">Hiring <span class="quarto-category-count">(1)</span></div><div class="category" data-category="MVP">MVP <span class="quarto-category-count">(1)</span></div><div class="category" data-category="News">News <span class="quarto-category-count">(1)</span></div><div class="category" data-category="SaaS">SaaS <span class="quarto-category-count">(5)</span></div><div class="category" data-category="Team">Team <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Tech">Tech <span class="quarto-category-count">(13)</span></div><div class="category" data-category="TinyMLaaS">TinyMLaaS <span class="quarto-category-count">(2)</span></div><div class="category" data-category="UseCase">UseCase <span class="quarto-category-count">(3)</span></div><div class="category" data-category="WoW">WoW <span class="quarto-category-count">(1)</span></div></div></div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Blog</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+
+
+
+
+<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
+<div class="list quarto-listing-default">
+<div class="quarto-post image-right" data-index="0" data-categories="Tech" data-listing-date-sort="1729900800000" data-listing-file-modified-sort="1727437991733" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="336">
+<div class="thumbnail">
+<p><a href="./blogs/tinyruntime.html" class="no-external"></a></p><a href="./blogs/tinyruntime.html" class="no-external">
+<p class="card-img-top"><img src="blogs/images/perf_bar.png"  class="thumbnail-image card-img"/></p>
+</a><p><a href="./blogs/tinyruntime.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./blogs/tinyruntime.html" class="no-external">tinyRuntime review</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./blogs/tinyruntime.html" class="no-external"></a>
+</div>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('Tech'); return false;">
+Tech
+</div>
+</div>
+<div class="listing-description">
+<a href="./blogs/tinyruntime.html" class="no-external">Reviewing the current status of our lightweight runtime</a>
+</div>
+</div>
+<div class="metadata">
+<a href="./blogs/tinyruntime.html" class="no-external">
+<div class="listing-date">
+Oct 26, 2024
+</div>
+<div class="listing-author">
+Haruka Doyu
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="1" data-categories="Tech,TinyMLaaS" data-listing-date-sort="1727395200000" data-listing-file-modified-sort="1727437991708" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="986">
+<div class="thumbnail">
+<p><a href="./blogs/demistify_tinymlaas.html" class="no-external"></a></p><a href="./blogs/demistify_tinymlaas.html" class="no-external">
+<p class="card-img-top"><img src="blogs/images/project_dashboard.jpg"  class="thumbnail-image card-img"/></p>
+</a><p><a href="./blogs/demistify_tinymlaas.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./blogs/demistify_tinymlaas.html" class="no-external">Demistifying TinyMLaaS</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./blogs/demistify_tinymlaas.html" class="no-external"></a>
+</div>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('Tech'); return false;">
+Tech
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('TinyMLaaS'); return false;">
+TinyMLaaS
+</div>
+</div>
+<div class="listing-description">
+<a href="./blogs/demistify_tinymlaas.html" class="no-external">Brief overview of the technology behind NinjaLABO’s TinyML as-a-Service</a>
+</div>
+</div>
+<div class="metadata">
+<a href="./blogs/demistify_tinymlaas.html" class="no-external">
+<div class="listing-date">
+Sep 27, 2024
+</div>
+<div class="listing-author">
+Nghi Vo
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="2" data-categories="UseCase" data-listing-date-sort="1727308800000" data-listing-file-modified-sort="1727437991732" data-listing-date-modified-sort="1727437991000" data-listing-reading-time-sort="5" data-listing-word-count-sort="958">
+<div class="thumbnail">
+<p><a href="./blogs/llm_on_camera.html" class="no-external"></a></p><a href="./blogs/llm_on_camera.html" class="no-external">
+<p class="card-img-top"><img src="blogs/images/llm_on_camera_example.png"  class="thumbnail-image card-img"/></p>
+</a><p><a href="./blogs/llm_on_camera.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./blogs/llm_on_camera.html" class="no-external">LLM on Camera as an Universal Sensor for Smart Mobility - Privacy-Preserving Edge AI PoC</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./blogs/llm_on_camera.html" class="no-external">Beyond 1984: Smart Cities Powered by Ethical AI and Citizen Empowerment</a>
+</div>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('UseCase'); return false;">
+UseCase
+</div>
+</div>
+<div class="listing-description">
+<a href="./blogs/llm_on_camera.html" class="no-external">NinjaLABO proposes a 1.5-month <strong>Proof of Concept (PoC)</strong> to demonstrate the transformative potential of <strong>Local Large Language Models (LLMs) on edge cameras</strong> as a <strong>Universal Sensor</strong> …<strong></strong></a>
+</div>
+</div>
+<div class="metadata">
+<a href="./blogs/llm_on_camera.html" class="no-external">
+<div class="listing-date">
+Sep 26, 2024
+</div>
+<div class="listing-author">
+Hiroshi Doyu
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="3" data-categories="WoW" data-listing-date-sort="1726012800000" data-listing-file-modified-sort="1727437991733" data-listing-date-modified-sort="1727437991000" data-listing-reading-time-sort="4" data-listing-word-count-sort="665">
+<div class="thumbnail">
+<p><a href="./blogs/todo_2024_autumn.html" class="no-external"></a></p><a href="./blogs/todo_2024_autumn.html" class="no-external">
+<p class="card-img-top"><img src="blogs/images/todo_2024_autumn.png"  class="thumbnail-image card-img"/></p>
+</a><p><a href="./blogs/todo_2024_autumn.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./blogs/todo_2024_autumn.html" class="no-external">ToDo list in Autumn 2024</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./blogs/todo_2024_autumn.html" class="no-external"></a>
+</div>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('WoW'); return false;">
+WoW
+</div>
+</div>
+<div class="listing-description">
+<a href="./blogs/todo_2024_autumn.html" class="no-external">This document provides an overview of NinjaLABO’s tasks and objectives for the autumn of 2024. The following sections outline key areas of focus, ranging from way of working…</a>
+</div>
+</div>
+<div class="metadata">
+<a href="./blogs/todo_2024_autumn.html" class="no-external">
+<div class="listing-date">
+Sep 11, 2024
+</div>
+<div class="listing-author">
+Hiroshi Doyu
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="4" data-categories="Tech,DNN" data-listing-date-sort="1725408000000" data-listing-file-modified-sort="1727437991732" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="931">
+<div class="thumbnail">
+<p><a href="./blogs/summer_insights_2024.html" class="no-external"></a></p><a href="./blogs/summer_insights_2024.html" class="no-external">
+<p class="card-img-top"><img src="blogs/images/pipeline.png"  class="thumbnail-image card-img"/></p>
+</a><p><a href="./blogs/summer_insights_2024.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./blogs/summer_insights_2024.html" class="no-external">Summer Insights: Evolving tinyMLaaS with Flexible Pipelines and Distributed Execution</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./blogs/summer_insights_2024.html" class="no-external"></a>
+</div>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('Tech'); return false;">
+Tech
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('DNN'); return false;">
+DNN
+</div>
+</div>
+<div class="listing-description">
+<a href="./blogs/summer_insights_2024.html" class="no-external">This summer, our team embarked on an ambitious journey, iterating through eight MVP releases of our tinyMLaaS platform, which focuses on deep neural network (DNN) model…</a>
+</div>
+</div>
+<div class="metadata">
+<a href="./blogs/summer_insights_2024.html" class="no-external">
+<div class="listing-date">
+Sep 4, 2024
+</div>
+<div class="listing-author">
+Hiroshi Doyu
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="5" data-categories="Hiring" data-listing-date-sort="1724889600000" data-listing-file-modified-sort="1727437991709" data-listing-date-modified-sort="1727437991000" data-listing-reading-time-sort="2" data-listing-word-count-sort="238">
+<div class="thumbnail">
+<p><a href="./blogs/hiring_2024_fall.html" class="no-external"></a></p><a href="./blogs/hiring_2024_fall.html" class="no-external">
+<p class="card-img-top"><img src="blogs/images/saas1.gif"  class="thumbnail-image card-img"/></p>
+</a><p><a href="./blogs/hiring_2024_fall.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./blogs/hiring_2024_fall.html" class="no-external">Looking for Software Engineer - AI Model Compression &amp; DNN Runtime</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./blogs/hiring_2024_fall.html" class="no-external"></a>
+</div>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('Hiring'); return false;">
+Hiring
+</div>
+</div>
+<div class="listing-description">
+<a href="./blogs/hiring_2024_fall.html" class="no-external">NinjaLABO is a fresh, finnish startup at the forefront of AI innovation, focusing on AI model compression and deep neural network (DNN) runtime optimization for IoT…</a>
+</div>
+</div>
+<div class="metadata">
+<a href="./blogs/hiring_2024_fall.html" class="no-external">
+<div class="listing-date">
+Aug 29, 2024
+</div>
+<div class="listing-author">
+Hiroshi Doyu
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="6" data-categories="Tech,DNN" data-listing-date-sort="1724112000000" data-listing-file-modified-sort="1727437991709" data-listing-date-modified-sort="1727437991000" data-listing-reading-time-sort="6" data-listing-word-count-sort="1119">
+<div class="thumbnail">
+<p><a href="./blogs/dnn_hsi_opt.html" class="no-external"></a></p><a href="./blogs/dnn_hsi_opt.html" class="no-external">
+<p class="card-img-top"><img src="blogs/images/dnn_hsi_opt.png"  class="thumbnail-image card-img"/></p>
+</a><p><a href="./blogs/dnn_hsi_opt.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./blogs/dnn_hsi_opt.html" class="no-external">Optimizing a DNN Model for Processing Hyperspectral Imaging (HSI) Data</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./blogs/dnn_hsi_opt.html" class="no-external"></a>
+</div>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('Tech'); return false;">
+Tech
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('DNN'); return false;">
+DNN
+</div>
+</div>
+<div class="listing-description">
+<a href="./blogs/dnn_hsi_opt.html" class="no-external">Hyperspectral Imaging (HSI) is a powerful technique that captures a wide spectrum of light across dozens to hundreds of narrow wavelength bands. Unlike traditional RGB…</a>
+</div>
+</div>
+<div class="metadata">
+<a href="./blogs/dnn_hsi_opt.html" class="no-external">
+<div class="listing-date">
+Aug 20, 2024
+</div>
+<div class="listing-author">
+Hiroshi Doyu
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="7" data-categories="Tech,DNN" data-listing-date-sort="1723939200000" data-listing-file-modified-sort="1727437991708" data-listing-date-modified-sort="1724112000000" data-listing-reading-time-sort="6" data-listing-word-count-sort="1084">
+<div class="thumbnail">
+<p><a href="./blogs/dnn_comp_techs.html" class="no-external"></a></p><a href="./blogs/dnn_comp_techs.html" class="no-external">
+<p class="card-img-top"><img src="blogs/images/dnn_comp_all.png"  class="thumbnail-image card-img"/></p>
+</a><p><a href="./blogs/dnn_comp_techs.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./blogs/dnn_comp_techs.html" class="no-external">Comprehensive Overview of DNN Model Compression Techniques</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./blogs/dnn_comp_techs.html" class="no-external"></a>
+</div>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('Tech'); return false;">
+Tech
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('DNN'); return false;">
+DNN
+</div>
+</div>
+<div class="listing-description">
+<a href="./blogs/dnn_comp_techs.html" class="no-external">Deep Neural Networks (DNNs) have achieved remarkable success across various domains, from image recognition to natural language processing. However, their deployment…</a>
+</div>
+</div>
+<div class="metadata">
+<a href="./blogs/dnn_comp_techs.html" class="no-external">
+<div class="listing-date">
+Aug 18, 2024
+</div>
+<div class="listing-author">
+Hiroshi Doyu
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="8" data-categories="Tech,UseCase" data-listing-date-sort="1723939200000" data-listing-file-modified-sort="1727437991733" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="15" data-listing-word-count-sort="2985">
+<div class="thumbnail">
+<p><a href="./blogs/yolofaceid.html" class="no-external"></a></p><a href="./blogs/yolofaceid.html" class="no-external">
+<p class="card-img-top"><img src="blogs/images/yolov8system.png"  class="thumbnail-image card-img"/></p>
+</a><p><a href="./blogs/yolofaceid.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./blogs/yolofaceid.html" class="no-external">Building a Real-Time Face Identification System: A Comprehensive Guide</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./blogs/yolofaceid.html" class="no-external"></a>
+</div>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('Tech'); return false;">
+Tech
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('UseCase'); return false;">
+UseCase
+</div>
+</div>
+<div class="listing-description">
+<a href="./blogs/yolofaceid.html" class="no-external">Explore how to build a real-time face identification system using <span>Ultralytics YOLOv8</span>, a state-of-the-art object detection model known for its speed and accuracy. We’ll compare various tools, including managed services like <span>AWS Rekognition</span> and <span>Azure Face API</span>, to help you choose the best solution for your needs. Whether you’re a developer seeking full control over your models or looking for an easy-to-integrate, scalable solution, this guide will provide you with the knowledge and tools to create a powerful <strong><em>face identification</em></strong> system.</a>
+</div>
+</div>
+<div class="metadata">
+<a href="./blogs/yolofaceid.html" class="no-external">
+<div class="listing-date">
+Aug 18, 2024
+</div>
+<div class="listing-author">
+Hiroshi Doyu
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="9" data-categories="Tech" data-listing-date-sort="1723420800000" data-listing-file-modified-sort="1727437991732" data-listing-date-modified-sort="1724889600000" data-listing-reading-time-sort="4" data-listing-word-count-sort="704">
+<div class="thumbnail">
+<p><a href="./blogs/pytorch_staticq.html" class="no-external"></a></p><a href="./blogs/pytorch_staticq.html" class="no-external">
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+</a><p><a href="./blogs/pytorch_staticq.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./blogs/pytorch_staticq.html" class="no-external">Demystifying PyTorch Static Quantization</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./blogs/pytorch_staticq.html" class="no-external"></a>
+</div>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('Tech'); return false;">
+Tech
+</div>
+</div>
+<div class="listing-description">
+<a href="./blogs/pytorch_staticq.html" class="no-external">A deep dive into how PyTorch performs inference with quantized models.</a>
+</div>
+</div>
+<div class="metadata">
+<a href="./blogs/pytorch_staticq.html" class="no-external">
+<div class="listing-date">
+Aug 12, 2024
+</div>
+<div class="listing-author">
+Haruka Doyu
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="10" data-categories="HU,TinyMLaaS" data-listing-date-sort="1722902400000" data-listing-file-modified-sort="1727437991708" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="2">
+<div class="thumbnail">
+<p><a href="./blogs/HU_Summer_2023.html" class="no-external"></a></p><a href="./blogs/HU_Summer_2023.html" class="no-external">
+<p class="card-img-top"><img src="blogs/images/12f6e393-7-image.png"  class="thumbnail-image card-img"/></p>
+</a><p><a href="./blogs/HU_Summer_2023.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./blogs/HU_Summer_2023.html" class="no-external">TinyML as-a-Service with Helsinki University summer course 2023</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./blogs/HU_Summer_2023.html" class="no-external"></a>
+</div>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('HU'); return false;">
+HU
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('TinyMLaaS'); return false;">
+TinyMLaaS
+</div>
+</div>
+<div class="listing-description">
+<a href="./blogs/HU_Summer_2023.html" class="no-external">This is the main repository of Tiny Machine Learning as a Service project for Software Engineering Project course at University of Helsinki, summer 2023.</a>
+</div>
+</div>
+<div class="metadata">
+<a href="./blogs/HU_Summer_2023.html" class="no-external">
+<div class="listing-date">
+Aug 6, 2024
+</div>
+<div class="listing-author">
+Hiroshi Doyu
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="11" data-categories="About,Team" data-listing-date-sort="1722902400000" data-listing-file-modified-sort="1727437991708" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="2">
+<div class="thumbnail">
+<p><a href="./blogs/about.html" class="no-external"></a></p><a href="./blogs/about.html" class="no-external">
+<p class="card-img-top"><img src="blogs/images/Origami-2.jpg.webp" alt="NinjaLABO’s origin"  class="thumbnail-image card-img"/></p>
+</a><p><a href="./blogs/about.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./blogs/about.html" class="no-external">About</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./blogs/about.html" class="no-external"></a>
+</div>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('About'); return false;">
+About
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Team'); return false;">
+Team
+</div>
+</div>
+<div class="listing-description">
+<a href="./blogs/about.html" class="no-external">The team of experts in software development, research, and design is working to enable businesses to integrate AI &amp; Machine Learning applications on a wide range of devices without relying on expensive networking &amp; cloud computing services thanks to their solution, TinyML as a Service.</a>
+</div>
+</div>
+<div class="metadata">
+<a href="./blogs/about.html" class="no-external">
+<div class="listing-date">
+Aug 6, 2024
+</div>
+<div class="listing-author">
+Hiroshi Doyu
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="12" data-categories="News,MVP" data-listing-date-sort="1722902400000" data-listing-file-modified-sort="1727437991732" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="5">
+<div class="thumbnail">
+<p><a href="./blogs/mvp6.html" class="no-external"></a></p><a href="./blogs/mvp6.html" class="no-external">
+<p class="card-img-top"><img src="images/mvp6.png" alt="AI Compression as-a-Service MVP6 review"  class="thumbnail-image card-img"/></p>
+</a><p><a href="./blogs/mvp6.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./blogs/mvp6.html" class="no-external">AI Compression as-a-Service MVP6 review</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./blogs/mvp6.html" class="no-external"></a>
+</div>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('News'); return false;">
+News
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('MVP'); return false;">
+MVP
+</div>
+</div>
+<div class="listing-description">
+<a href="./blogs/mvp6.html" class="no-external">Our internal review of MVP6 usage</a>
+</div>
+</div>
+<div class="metadata">
+<a href="./blogs/mvp6.html" class="no-external">
+<div class="listing-date">
+Aug 6, 2024
+</div>
+<div class="listing-author">
+Nghi Vo
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="13" data-categories="Tech,SaaS,Competitor" data-listing-date-sort="1722816000000" data-listing-file-modified-sort="1727437991709" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="636">
+<div class="thumbnail">
+<p><a href="./blogs/edgeimplusestudio.html" class="no-external"></a></p><a href="./blogs/edgeimplusestudio.html" class="no-external">
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+</a><p><a href="./blogs/edgeimplusestudio.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./blogs/edgeimplusestudio.html" class="no-external">Edge Impulse Review</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./blogs/edgeimplusestudio.html" class="no-external"></a>
+</div>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('Tech'); return false;">
+Tech
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('SaaS'); return false;">
+SaaS
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Competitor'); return false;">
+Competitor
+</div>
+</div>
+<div class="listing-description">
+<a href="./blogs/edgeimplusestudio.html" class="no-external">Edge Impulse - A Comprehensive Review of the Leading Edge AI Platform</a>
+</div>
+</div>
+<div class="metadata">
+<a href="./blogs/edgeimplusestudio.html" class="no-external">
+<div class="listing-date">
+Aug 5, 2024
+</div>
+<div class="listing-author">
+Nghi Vo
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="14" data-categories="Tech,SaaS" data-listing-date-sort="1721174400000" data-listing-file-modified-sort="1727437991732" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="815">
+<div class="thumbnail">
+<p><a href="./blogs/tinymlaas.html" class="no-external"></a></p><a href="./blogs/tinymlaas.html" class="no-external">
+<p class="card-img-top"><img src="blogs/images/tinymlaas_detail.png"  class="thumbnail-image card-img"/></p>
+</a><p><a href="./blogs/tinymlaas.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./blogs/tinymlaas.html" class="no-external">TinyML as-a-Service Overview</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./blogs/tinymlaas.html" class="no-external"></a>
+</div>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('Tech'); return false;">
+Tech
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('SaaS'); return false;">
+SaaS
+</div>
+</div>
+<div class="listing-description">
+<a href="./blogs/tinymlaas.html" class="no-external">Brief overview of NinjaLABO’s TinyML as-a-Service / AI compression as-a-Service </a>
+</div>
+</div>
+<div class="metadata">
+<a href="./blogs/tinymlaas.html" class="no-external">
+<div class="listing-date">
+Jul 17, 2024
+</div>
+<div class="listing-author">
+Hiroshi Doyu
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="15" data-categories="Tech,Compiler" data-listing-date-sort="1720742400000" data-listing-file-modified-sort="1727437991732" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="537">
+<div class="thumbnail">
+<p><a href="./blogs/iree.html" class="no-external"></a></p><a href="./blogs/iree.html" class="no-external">
+<p class="card-img-top"><img src="blogs/images/iree.png"  class="thumbnail-image card-img"/></p>
+</a><p><a href="./blogs/iree.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./blogs/iree.html" class="no-external">IREE review</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./blogs/iree.html" class="no-external"></a>
+</div>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('Tech'); return false;">
+Tech
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Compiler'); return false;">
+Compiler
+</div>
+</div>
+<div class="listing-description">
+<a href="./blogs/iree.html" class="no-external">Brief overview of IREE</a>
+</div>
+</div>
+<div class="metadata">
+<a href="./blogs/iree.html" class="no-external">
+<div class="listing-date">
+Jul 12, 2024
+</div>
+<div class="listing-author">
+Haruka Doyu
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="16" data-categories="Tech,SaaS,Competitor" data-listing-date-sort="1720396800000" data-listing-file-modified-sort="1727437991732" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="511">
+<div class="thumbnail">
+<p><a href="./blogs/imagimobstudio.html" class="no-external"></a></p><a href="./blogs/imagimobstudio.html" class="no-external">
+<p class="card-img-top"><img src="blogs/images/imagimob_logo.jpg"  class="thumbnail-image card-img"/></p>
+</a><p><a href="./blogs/imagimobstudio.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./blogs/imagimobstudio.html" class="no-external">Imagimob Studio Review</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./blogs/imagimobstudio.html" class="no-external"></a>
+</div>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('Tech'); return false;">
+Tech
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('SaaS'); return false;">
+SaaS
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Competitor'); return false;">
+Competitor
+</div>
+</div>
+<div class="listing-description">
+<a href="./blogs/imagimobstudio.html" class="no-external">Brief overview of Imagimob Studio - A solution for Edge AI applications</a>
+</div>
+</div>
+<div class="metadata">
+<a href="./blogs/imagimobstudio.html" class="no-external">
+<div class="listing-date">
+Jul 8, 2024
+</div>
+<div class="listing-author">
+Nghi Vo
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="17" data-categories="Tech,SaaS" data-listing-date-sort="1719878400000" data-listing-file-modified-sort="1727437991708" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="522">
+<div class="thumbnail">
+<p><a href="./blogs/aicompressionsaas.html" class="no-external"></a></p><a href="./blogs/aicompressionsaas.html" class="no-external">
+<p class="card-img-top"><img src="blogs/images/tinymlaas.png"  class="thumbnail-image card-img"/></p>
+</a><p><a href="./blogs/aicompressionsaas.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./blogs/aicompressionsaas.html" class="no-external">AI compression SaaS</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./blogs/aicompressionsaas.html" class="no-external"></a>
+</div>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('Tech'); return false;">
+Tech
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('SaaS'); return false;">
+SaaS
+</div>
+</div>
+<div class="listing-description">
+<a href="./blogs/aicompressionsaas.html" class="no-external">Brief overview of AI Compression</a>
+</div>
+</div>
+<div class="metadata">
+<a href="./blogs/aicompressionsaas.html" class="no-external">
+<div class="listing-date">
+Jul 2, 2024
+</div>
+<div class="listing-author">
+Hiroshi Doyu
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="18" data-categories="Tech,SaaS,UseCase" data-listing-date-sort="1719878400000" data-listing-file-modified-sort="1727437991732" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="419">
+<div class="thumbnail">
+<p><a href="./blogs/tinymlusecases.html" class="no-external"></a></p><a href="./blogs/tinymlusecases.html" class="no-external">
+<p class="card-img-top"><img src="blogs/images/tinymlusecases.png"  class="thumbnail-image card-img"/></p>
+</a><p><a href="./blogs/tinymlusecases.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./blogs/tinymlusecases.html" class="no-external">TinyML Use Cases</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./blogs/tinymlusecases.html" class="no-external"></a>
+</div>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('Tech'); return false;">
+Tech
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('SaaS'); return false;">
+SaaS
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('UseCase'); return false;">
+UseCase
+</div>
+</div>
+<div class="listing-description">
+<a href="./blogs/tinymlusecases.html" class="no-external">Use cases for TinyML offered by NinjaLABO</a>
+</div>
+</div>
+<div class="metadata">
+<a href="./blogs/tinymlusecases.html" class="no-external">
+<div class="listing-date">
+Jul 2, 2024
+</div>
+<div class="listing-author">
+Hiroshi Doyu
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="19" data-categories="Ericsson" data-listing-date-sort="1596672000000" data-listing-file-modified-sort="1727437991709" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="9">
+<div class="thumbnail">
+<p><a href="./blogs/ericsson_blog2.html" class="no-external"></a></p><a href="./blogs/ericsson_blog2.html" class="no-external">
+<p class="card-img-top"><img src="blogs/images/eb2.png" alt="How can we democratize machine learning on IoT devices?"  class="thumbnail-image card-img"/></p>
+</a><p><a href="./blogs/ericsson_blog2.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./blogs/ericsson_blog2.html" class="no-external">How can we democratize machine learning on IoT devices?</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./blogs/ericsson_blog2.html" class="no-external"></a>
+</div>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('Ericsson'); return false;">
+Ericsson
+</div>
+</div>
+<div class="listing-description">
+<a href="./blogs/ericsson_blog2.html" class="no-external">Making tiny machine learning widely available on edge IoT devices could prove to be a major leap in smart sensing across industries. Below, we plot the technical milestones to making that happen as part of our ongoing research into TinyML as-a-service.</a>
+</div>
+</div>
+<div class="metadata">
+<a href="./blogs/ericsson_blog2.html" class="no-external">
+<div class="listing-date">
+Aug 6, 2020
+</div>
+<div class="listing-author">
+Hiroshi Doyu
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="20" data-categories="Ericsson" data-listing-date-sort="1565049600000" data-listing-file-modified-sort="1727437991709" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="11">
+<div class="thumbnail">
+<p><a href="./blogs/ericsson_blog1.html" class="no-external"></a></p><a href="./blogs/ericsson_blog1.html" class="no-external">
+<p class="card-img-top"><img src="blogs/images/eb1.png" alt="TinyML as-a-Service and the challenges of machine learning at the edge"  class="thumbnail-image card-img"/></p>
+</a><p><a href="./blogs/ericsson_blog1.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./blogs/ericsson_blog1.html" class="no-external">TinyML as-a-Service and the challenges of machine learning at the edge</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./blogs/ericsson_blog1.html" class="no-external"></a>
+</div>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('Ericsson'); return false;">
+Ericsson
+</div>
+</div>
+<div class="listing-description">
+<a href="./blogs/ericsson_blog1.html" class="no-external">The TinyML as-a-Service project at Ericsson Research sets out to address the challenges that today limit the potential of machine learning (ML) paradigms at the edge of the embedded IoT world. In this post, the second post in our TinyML series, we take a closer look at the technical and non-technical challenges on our journey to making that happen. Learn more below.</a>
+</div>
+</div>
+<div class="metadata">
+<a href="./blogs/ericsson_blog1.html" class="no-external">
+<div class="listing-date">
+Aug 6, 2019
+</div>
+<div class="listing-author">
+Hiroshi Doyu
+</div>
+</a>
+</div>
+</div>
+</div>
+<div class="listing-no-matching d-none">
+No matching items
+</div>
+</div></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/ninjalabo\.github\.io\/");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./docs/tinymlaas/Use_cases.html" class="pagination-link" aria-label="Use case scenarios">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Use case scenarios</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./performance.html" class="pagination-link" aria-label="Performance">
+        <span class="nav-page-text">Performance</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>Copyright 2023-2024, NinjaLABO</p>
+</div>   
+    <div class="nav-footer-center">
+<p><strong>Get support</strong></p>
+<ul>
+<li>For pricing and sales inquiries <a href="mailto:sales@ninjalabo.ai" class="email">sales@ninjalabo.ai</a></li>
+<li>Ask tech questions <a href="mailto:help@ninjalabo.ai" class="email">help@ninjalabo.ai</a></li>
+</ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/ninjalabo/ninjalabo.github.io/edit/main/blog.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ninjalabo/ninjalabo.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="nav-footer-right">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item">
+ Helsinki, Finland
+  </li>  
+    <li class="nav-item compact">
+    <a class="nav-link" href="https://twitter.com/ninjalabo">
+      <i class="bi bi-twitter" role="img" aria-label="NinjaLABO Twitter">
+</i> 
+    </a>
+  </li>  
+    <li class="nav-item compact">
+    <a class="nav-link" href="https://www.linkedin.com/company/ninjalabo/">
+      <i class="bi bi-linkedin" role="img" aria-label="NinjaLABO LinkedIn">
+</i> 
+    </a>
+  </li>  
+    <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/ninjalabo/ninjalabo.github.io">
+      <i class="bi bi-github" role="img" aria-label="NinjaLABO GitHub">
+</i> 
+    </a>
+  </li>  
+</ul>
+    </div>
+  </div>
+</footer>
+
+
+
+
+</body></html>
